@@ -1,0 +1,10 @@
+# Ignorar node_modules en ambas carpetas
+/backend/node_modules/
+/frontend/node_modules/
+
+# Ignorar build del frontend
+/frontend/build/
+
+# Ignorar archivos de configuración específicos
+/backend/.env
+/frontend/.env
