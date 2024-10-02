@@ -1,4 +1,5 @@
 import { ArticleModel } from "../models/local-file-system/article.js"
+import { validateArticle } from "../schemas/articles.js"
 
 export class ArticleController {
   static async getAll (req, res) {
@@ -12,5 +13,19 @@ export class ArticleController {
     const article = await ArticleModel.getById({ id })
     if (article) return res.json(article)
     res.status(404).json({ message: "Article not found" })
+  }
+
+  static async create (req, res) {
+    const result = validateArticle(req.body)
+
+    if (!result.success) {
+      return res.status(400).json({
+        error: JSON.parse(result.error.messagge)
+      })
+    }
+
+    const newArticle = await ArticleModel.create({ input: result.data })
+
+    res.status(201).json(newArticle)
   }
 }

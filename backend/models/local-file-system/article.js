@@ -13,4 +13,15 @@ export class ArticleModel {
     const article = articles.find(article => article.id === Number(id))
     return article
   }
+
+  static async create({ input }) {
+    const newArticle = {
+      id: randomUUID(),
+      ...input
+    }
+
+    articlesJSON.push(newArticle)
+
+    return newArticle
+  }
 }

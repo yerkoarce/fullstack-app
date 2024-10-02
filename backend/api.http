@@ -3,3 +3,13 @@ GET http://localhost:3000/articles
 
 ### Obtener articulo por id 
 GET http://localhost:3000/articles/2
+
+### Crear un nuevo articulo
+GET http://localhost:3000/articles
+Content-Type: application/json
+
+{
+  "title": "Nuevo articulo 1",
+  "body": "Este es un nuevo articulo de prueba",
+  "user": "usuario 1"
+}
