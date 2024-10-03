@@ -8,3 +8,5 @@ articlesRouter.get("/", ArticleController.getAll)
 articlesRouter.get("/:id", ArticleController.getById)
 
 articlesRouter.post("/", ArticleController.create)
+
+articlesRouter.delete("/:id", ArticleController.delete)

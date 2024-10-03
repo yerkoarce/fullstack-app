@@ -28,4 +28,16 @@ export class ArticleController {
 
     res.status(201).json(newArticle)
   }
+
+  static async delete (req, res) {
+    const { id } = req.params
+
+    const result = await ArticleModel.delete({ id })
+
+    if (result === false){
+      return res.status(404).json({ messagge: "Article not found" })
+    }
+
+    return res.json({ messagge: "Article deleted" })
+  }
 }

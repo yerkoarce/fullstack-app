@@ -1,6 +1,7 @@
-import { articles } from "./data/articles.js"
 import { articlesRouter } from "./routes/articles.js"
 import express from "express"
+
+
 
 const app = express()
 

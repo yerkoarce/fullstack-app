@@ -5,7 +5,7 @@ GET http://localhost:3000/articles
 GET http://localhost:3000/articles/2
 
 ### Crear un nuevo articulo
-GET http://localhost:3000/articles
+POST http://localhost:3000/articles
 Content-Type: application/json
 
 {
@@ -13,3 +13,6 @@ Content-Type: application/json
   "body": "Este es un nuevo articulo de prueba",
   "user": "usuario 1"
 }
+
+### Borrar un articulo por id
+DELETE http://localhost:3000/articles/5
